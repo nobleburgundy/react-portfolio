@@ -15,7 +15,6 @@ function Portfolio(props) {
                 <Link to={"portfolio/" + project.id}>{project.title}</Link>
               </li>
             );
-            // return <ProjectDetail title={project.title} description={project.description} src={project.imageSrc} />;
           })}
         </ul>
       </PageContainer>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router";
 import projects from "../Portfolio/portfolio-data";
+const srcBase = "https://james-gould.herokuapp.com/assets/img/";
 
 function ProjectDetail() {
   let { id } = useParams();
@@ -8,8 +9,8 @@ function ProjectDetail() {
   return (
     <>
       <h1>{project.title}</h1>
-      <h2>{project.description}</h2>
-      <img src={project.thumbnail} alt={project.title} />
+      <p>{project.description}</p>
+      <img className="w-100" src={srcBase + project.thumbnail} alt={project.title} />
       <h2>Technologies Used:</h2>
       <ul>
         {project.technologies.map((tech, id) => {
