@@ -1,19 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PageContainer from "../../components/PageContainer";
-import portfolio from "./portfolio-data";
-const srcBase = "https://james-gould.herokuapp.com/assets/img/";
+import api from "../../utils/api";
+// import portfolio from "./portfolio-data";
 
-function Portfolio(props) {
+function Portfolio() {
+  const [portfolio, setPortfolio] = useState([]);
+  useEffect(() => {
+    function loadPortfolio() {
+      api.getPortfolio().then((portfolio) => setPortfolio(portfolio));
+    }
+
+    loadPortfolio();
+  }, []);
   return (
     <>
       <PageContainer>
         <h1>Portfolio</h1>
         <div className="card-deck">
-          {portfolio.map((project) => {
+          {portfolio.map((project, id) => {
             return (
-              <div className="card" key={project.id}>
-                <img className="card-img-top" src={srcBase + project.thumbnail} alt="card cap" />
+              <div className="card" key={id}>
+                <img className="card-img-top" src={project.thumbnailPath} alt="card cap" />
                 <Link to={"portfolio/" + project.id}>{project.title}</Link>
                 <p className="card-text">{project.description}</p>
               </div>
