@@ -18,12 +18,13 @@ function Portfolio() {
         <h1>Portfolio</h1>
         <div className="row">
           {portfolio.map((project, id) => {
+            const projectIndex = id + 1;
             return (
               <div className="col-lg-3 col-md-6 mb-4" key={id}>
-                <div className="card h-100">
-                  <img className="card-img-top" src={project.thumbnailPath} alt="card cap" />
-                  <Link to={project.link}>{project.title}</Link>
-                  <p className="card-text">{project.description}</p>
+                <div className="card h-100 text-monospace p-3">
+                  <img className="card-img-top p-3" src={project.thumbnailPath} alt="card cap" />
+                  <Link to={"portfolio/" + projectIndex}>{project.title}</Link>
+                  <p className="card-text mt-3">{project.description}</p>
                 </div>
               </div>
             );
