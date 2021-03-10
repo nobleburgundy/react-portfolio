@@ -12,6 +12,15 @@ const api = {
       return portfolio;
     });
   },
+  getProjectById: function (id) {
+    return axios.get(portfolioAPI, { headers }).then((res) => {
+      const project = res.data[parseInt(id) - 1];
+      console.log("id", id);
+      console.log("project", project);
+
+      return project;
+    });
+  },
 };
 
 export default api;
