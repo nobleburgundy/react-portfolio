@@ -21,7 +21,7 @@ function App() {
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/">
+        <Route path={["/", "/react-portfolio"]}>
           <Home />
         </Route>
         <Route path="/*">
