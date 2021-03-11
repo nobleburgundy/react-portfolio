@@ -22,7 +22,9 @@ function Portfolio() {
             return (
               <div className="col-lg-3 col-md-6 mb-4" key={id}>
                 <div className="card h-100 text-monospace p-3">
-                  <img className="card-img-top p-3" src={project.thumbnailPath} alt="card cap" />
+                  <Link to={"portfolio/" + projectIndex}>
+                    <img className="card-img-top p-3" src={project.thumbnailPath} alt="card cap" />
+                  </Link>
                   <Link to={"portfolio/" + projectIndex}>{project.title}</Link>
                   <p className="card-text mt-3">{project.description}</p>
                 </div>
