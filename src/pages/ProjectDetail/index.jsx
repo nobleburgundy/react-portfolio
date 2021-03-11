@@ -36,7 +36,8 @@ function ProjectDetail() {
             <div className="col-md-6">
               <h1>{project.title}</h1>
               <p className="card-text mt-3">{project.description}</p>
-              <ul>
+              <h2>Technologies:</h2>
+              <ul className="text-monospace">
                 {technologies.map((tech, id) => {
                   return <li key={id}>{tech}</li>;
                 })}
