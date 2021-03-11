@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Nav() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-sm navbar-light bg-light">
         <a className="navbar-brand" href="/react-portfolio">
           James Gould
         </a>
