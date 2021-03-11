@@ -7,6 +7,7 @@ import "./style.css";
 
 function ProjectDetail() {
   const [project, setProject] = useState({});
+  const [technologies, setTechnologies] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -14,6 +15,7 @@ function ProjectDetail() {
       .getProjectById(id)
       .then((res) => {
         setProject(res);
+        setTechnologies(res.technologies);
       })
       .catch((err) => console.log(err));
   }, [id]);
@@ -34,10 +36,17 @@ function ProjectDetail() {
             <div className="col-md-6">
               <h1>{project.title}</h1>
               <p className="card-text mt-3">{project.description}</p>
-              <Link className="d-block pb-3" to={project.link}>
+              <ul>
+                {technologies.map((tech, id) => {
+                  return <li key={id}>{tech}</li>;
+                })}
+              </ul>
+              <a className="d-block pb-3" target="_blank" rel="noreferrer" href={project.link}>
                 Live Link
-              </Link>
-              <Link to={project.github}>Github</Link>
+              </a>
+              <a target="_blank" rel="noreferrer" href={project.github}>
+                Github
+              </a>
             </div>
           </div>
         </div>
