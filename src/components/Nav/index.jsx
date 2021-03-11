@@ -5,7 +5,7 @@ function Nav() {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="/">
+        <a className="navbar-brand" href="/react-portfolio">
           James Gould
         </a>
         <button
@@ -22,7 +22,7 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navLinks">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/react-portfolio">
                 Home
               </Link>
             </li>
